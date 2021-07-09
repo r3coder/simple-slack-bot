@@ -23,11 +23,12 @@ Please see the `demo.py`. Result of the `demo.py` is shown below.
 
 ### `slackBot.SetToken(token)`
 **Mandatory**. Sets the token for slackBot.
-
 ### `slackBot.SetProcessInfo(name)`
 Set Process Information manually. Useful on docker environment.
 ### `slackBot.SetChannel(channel)`
 Sets a channel to send message. If called again, it will change default channel. Sends a message to the channel.
+### `slackBot.ResetStartTime()`
+Resets `startTime` which used to calculate estimated time. Use this to measure more time specifically like just before start of the training.
 
 ### `slackBot.SendProgress(progress, [estimated, length, message, channel])`
 Sends progress message to the channel.
