@@ -16,7 +16,7 @@ On your code, you should call `slackBot.SetToken('your-token')` to set token to 
 
 If there's no channel name with `#server-bot`, you should call `slackBot.SetChannel('#channel-name')` to set channel. Otherwise, will not work.
 
-If you are running things on docker, ip address and pid will not shown normally. usd `slackBot.SetProcessInfo('name')` to set manually.
+If you are running things on docker, ip address and pid will not shown normally. use `slackBot.SetProcessInfo('name')` to set name manually.
 # API
 Please see the `demo.py`. Result of the `demo.py` is shown below.
 ![image](./assets/execution.png)
