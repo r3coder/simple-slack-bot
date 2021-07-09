@@ -40,6 +40,9 @@ class slackBot_:
     def SetToken(self, token):
         self.client = WebClient(token=token)
 
+    def SetProcessInfo(self, name):
+        self.processInfo = name
+
     def DisableLimit(self):
         self.isLimit = False
     
