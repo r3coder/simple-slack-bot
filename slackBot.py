@@ -43,6 +43,9 @@ class slackBot_:
     def SetProcessInfo(self, name):
         self.processInfo = name
 
+    def ResetStartTime(self):
+        self.startTime = time.time()
+
     def DisableLimit(self):
         self.isLimit = False
     
