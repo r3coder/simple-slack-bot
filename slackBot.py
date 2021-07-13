@@ -89,18 +89,21 @@ class slackBot_:
             print("slackBot ERROR: You're sending message too fast! (%.2f seconds) slackBot.DisableLimit() to disable this feature"%self.minMessageInterval)
             return
         self.Send(message, ":no_entry: `%s` Error!\n"%self.processInfo, channel)
+        self.latestMessageTime = time.time()
 
     def SendWarning(self, message, channel=""):
         if self.isLimit and self.latestMessageTime + self.minMessageInterval >= time.time():
             print("slackBot ERROR: You're sending message too fast! (%.2f seconds) slackBot.DisableLimit() to disable this feature"%self.minMessageInterval)
             return
         self.Send(message, ":warning: `%s` Warning...\n"%self.processInfo, channel)
+        self.latestMessageTime = time.time()
 
     def SendMessage(self, message, channel=""):
         if self.isLimit and self.latestMessageTime + self.minMessageInterval >= time.time():
             print("slackBot ERROR: You're sending message too fast! (%.2f seconds) slackBot.DisableLimit() to disable this feature"%self.minMessageInterval)
             return
         self.Send(message, ":pencil: `%s` Message\n"%self.processInfo, channel)
+        self.latestMessageTime = time.time()
 
     def AppendDump(self, message):
         if not isinstance(message, str):
@@ -178,6 +181,5 @@ class slackBot_:
             )
         except SlackApiError as e:
             print("slackBot ERROR: Couldn't send message (%s)"%e.response["error"])
-        self.latestMessageTime = time.time()
 
 slackBot = slackBot_()
