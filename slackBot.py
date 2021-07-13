@@ -74,7 +74,7 @@ class slackBot_:
         self.Send(message, s, channel)
 
     def SendEndSignal(self, message="", channel=""):
-        s = ":ballot_box_with_check: `%s` Finished! @ `%s` \n"%(self.processInfo, TimeStr(time.time()))
+        s = ":ballot_box_with_check: `%s` Finished! @ `%s` \n"%(self.processInfo, TimeStr(time.time() + self.timezone*60*60))
         if message != "":
             s += "Additional Message:\n"   
         self.Send(message, s, channel)
